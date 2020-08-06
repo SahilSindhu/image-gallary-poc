@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ProgressBar from "./ProgressBar";
 
 export default function UpoadForm() {
   const [file, setFile] = useState(null);
@@ -25,6 +26,7 @@ export default function UpoadForm() {
       <div className="output">
         {error && <div className="error">{error}</div>}
         {file && <div className="filename">{file.name}</div>}
+        {file && <ProgressBar file={file} setFile={setFile} />}
       </div>
     </form>
   );
